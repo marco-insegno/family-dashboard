@@ -95,7 +95,7 @@ nav img {
     background: rgba(255, 192, 203, 0.7);
     position: fixed;
     right: 0;
-    top: 200px;
+    top: 400px;
     margin-right:-74%;
     transition: 0.3s;
 }
@@ -135,6 +135,7 @@ nav img {
     margin-bottom: -470px;
     margin-left: -50px;
     transition: 0.8s;
+    z-index: 1;
 }
 
 .box8{
@@ -143,7 +144,7 @@ nav img {
     background: rgba(255, 0, 0, 0.7);
     position: fixed;
     left: 0;
-    bottom: 550px;
+    bottom: 460px;
     margin-left: -74vw;
     transition: 0.3s;
 }
@@ -154,7 +155,7 @@ nav img {
     background: rgba(255, 166, 0, 0.7);
     position: fixed;
     left: 0;
-    top: 180px;
+    top: 220px;
     margin-left: -450px;
     transition: 0.3s;
 }
@@ -180,7 +181,7 @@ nav img {
 }
 
 .box4:hover{
-    border-bottom-left-radius: 100%;
+    border-bottom-left-radius: 90%;
 }
 
 .box5:hover {
