@@ -14,8 +14,13 @@ body {
     font-family: 'Inconsolata', monospace;
 }
 
-/* LOGO */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+/* LOGO */
 nav img {
     width: 80px;
     position: fixed;
@@ -26,7 +31,18 @@ nav img {
     border-radius: 50%;
 }
 
-/* BOXES */
+/* ANIMATION */
+.animation {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    z-index: 0;
+    animation-name: 'animazione';
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* BOXES INTERNAL STRUCTURE */
 .box1,
 .box2 {
     display: flex;
@@ -50,6 +66,7 @@ nav img {
     display: flex;
     justify-content: center;
 }
+
 .box8,
 .box9 {
     display: flex;
@@ -57,11 +74,25 @@ nav img {
     align-items: center;
 }
 
+/* BOXES */
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9 {
+    position: fixed;
+    z-index: 1;
+}
+
 .box1 {
     width: 30vw;
     height: 40vh;
     background: rgba(255, 0, 255, 0.7);
-    position: fixed;
+    top: 0;
     left: 20%;
     margin-top: -38vh;
     transition: 0.3s;
@@ -71,7 +102,7 @@ nav img {
     width: 30vw;
     height: 40vh;
     background: rgba(229, 255, 0, 0.7);
-    position: fixed;
+    top: 0;
     left: 60%;
     margin-top: -38vh;
     transition: 0.3s;
@@ -81,22 +112,20 @@ nav img {
     width: 350px;
     height: 350px;
     background: rgba(0, 0, 0, 0.7);
-    position: fixed;
     right: 0;
+    top: 0;
     margin-right: -320px;
     margin-top: -220px;
     transition: 0.3s;
-    z-index: 2;
 }
 
 .box4 {
     width: 80vw;
     height: 500px;
     background: rgba(255, 192, 203, 0.7);
-    position: fixed;
     right: 0;
     top: 400px;
-    margin-right:-74%;
+    margin-right: -74%;
     transition: 0.3s;
 }
 
@@ -104,62 +133,56 @@ nav img {
     width: 450px;
     height: 500px;
     background-color: rgba(0, 250, 154, 0.7);
-    position: fixed;
     bottom: 0;
     right: 0;
     border-top-left-radius: 100%;
     transition: 0.8s;
     margin-bottom: -300px;
     margin-right: -190px;
-    z-index: 1;
 }
 
 .box6 {
     width: 30vw;
     height: 500px;
     background-color: rgba(78, 41, 244, 0.7);
-    position: fixed;
     bottom: 0;
     left: 25%;
     margin-bottom: -470px;
     transition: 0.3s;
 }
 
-.box7{
+.box7 {
     width: 150px;
     height: 500px;
-    background: rgba(43, 226, 220, 0.7);
-    position: fixed;
+    background: rgba(255, 0, 0, 0.7);
     bottom: 0;
     left: 0;
     margin-bottom: -470px;
     margin-left: -50px;
     transition: 0.8s;
-    z-index: 1;
 }
 
-.box8{
+.box8 {
     width: 80vw;
     height: 350px;
-    background: rgba(255, 0, 0, 0.7);
-    position: fixed;
+    background: rgba(43, 226, 220, 0.7);
     left: 0;
     bottom: 460px;
     margin-left: -74vw;
     transition: 0.3s;
 }
 
-.box9{
+.box9 {
     width: 480px;
     height: 150px;
     background: rgba(255, 166, 0, 0.7);
-    position: fixed;
     left: 0;
     top: 220px;
     margin-left: -450px;
     transition: 0.3s;
 }
 
+/* BOXES HOVER */
 .box1:hover,
 .box2:hover,
 .box3:hover {
@@ -170,7 +193,12 @@ nav img {
 .box1:hover {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    border:4px dotted white;
+    border: 4px dotted white;
+    border-top: none;
+}
+
+.box2:hover {
+    border: 2px dashed rgb(38, 124, 25);
     border-top: none;
 }
 
@@ -180,7 +208,7 @@ nav img {
     transition: 0.8s;
 }
 
-.box4:hover{
+.box4:hover {
     border-bottom-left-radius: 90%;
 }
 
@@ -191,25 +219,25 @@ nav img {
     transition: 0.8s;
 }
 
-.box6:hover{
+.box6:hover {
     margin-bottom: 0px;
     transition: 0.8s;
     border-top-left-radius: 35%;
     border-top-right-radius: 35%;
 }
 
-.box7:hover{
+.box7:hover {
     margin-bottom: 0px;
     margin-left: 0px;
     transition: 0.8s;
 }
 
-.box8:hover{
+.box8:hover {
     margin-left: 0;
     transition: 0.8s;
 }
 
-.box9:hover{
+.box9:hover {
     margin-left: 0px;
     transition: 0.8s;
 }
@@ -222,6 +250,7 @@ nav img {
     text-transform: uppercase;
 }
 
+/* TEXT CARD */
 .vertical-text {
     font-size: 25px;
     writing-mode: vertical-rl;
@@ -237,7 +266,7 @@ nav img {
     right: 10px;
 }
 
-.title-position-left{
+.title-position-left {
     position: fixed;
     bottom: 0;
     left: 10px;
@@ -247,14 +276,17 @@ nav img {
 /* MEDIA QUERY */
 
 /* BOX */
-
 @media screen and (max-width:480px) {
 
-    .container-boxes {
+    section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .animation {
+        display: none;
     }
 
     .box {
@@ -271,6 +303,7 @@ nav img {
     }
 
     .box1:hover,
+    .box2:hover,
     .box4:hover {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
@@ -287,116 +320,52 @@ nav img {
     .title-position-right {
         position: relative;
     }
+
     .title-position-left {
         position: relative;
     }
-    
+
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ANIMAZIONE 1 */
-
-/* @keyframes animazione {
+@keyframes animazione {
 
     0% {
-        background-color: rgba(255, 0, 0, 0.4);
+        border: 1px solid black;
+    }
+
+    20% {
+        border-radius: 0%;
+        border: 1px solid rgb(234, 255, 0);
     }
 
     50% {
-        width: 13vw;
-        height: 25vh;
         width: 250px;
         height: 250px;
-        background-color: rgba(225, 255, 0, 0.4);
-        border: 3px dotted yellow;
+        border-radius: 0%;
         transform: rotate(-360deg);
-        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgb(255, 0, 0);
+    }
+
+    60% {
+        border: 1px solid rgb(0, 250, 154);
+    }
+
+    75% {
+        background-color: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgb(0, 4, 255);
+    }
+
+    80% {
+        border-radius: 0%;
+        border: 1px solid rgb(255, 166, 0);
     }
 
     100% {
-        border-radius: 0;
-        background-color: rgba(255, 0, 0, 0.4);
-        border: 1px solid red;
         transform: rotate(360deg);
-    }
-
-} */
-
-/* ANIMAZIONE 2 */
-
-/* @keyframes animazione{
-
-    0%{
-        background-color: rgba(255, 0, 0, 0.4);
-        transform: rotate(360deg);
-    }
-
-    50%{
-        width: 13vw;
-        height: 25vh;
-        background-color: rgba(225, 255, 0, 0.4);
-        transform: rotate(-360deg);
+        border: 1px solid black;
         border-radius: 50%;
     }
-    100%{
-        border-radius: 0;
-        background-color: rgba(255, 0, 0, 0.4);
-        transform: rotate(-360deg);  
-    }
 
-
-} */
-
-
-/* CSS BOTTONE */
-/* .button-52 {
-    font-size: 16px !important;
-    font-weight: 200 !important;
-    letter-spacing: 1px !important;
-    padding: 13px 20px 13px !important;
-    outline: 0 !important;
-    border: 1px solid black !important; 
-    cursor: pointer !important;
-    position: relative !important;
-    background-color: rgba(0, 0, 0, 0) !important;
-    user-select: none !important;
-    -webkit-user-select: none !important;
-    touch-action: manipulation !important;
 }
-
-.button-52:after {
-    content: "" !important;
-    background-color: #920f78 !important;
-    width: 100% !important;
-    z-index: -1 !important;
-    position: absolute !important;
-    height: 100% !important;
-    top: 7px !important;
-    left: 7px !important;
-    transition: 0.2s !important;
-}
-
-.button-52:hover:after {
-    top: 0px !important;
-    left: 0px !important;
-} */
