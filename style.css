@@ -110,7 +110,7 @@ nav img {
     background: rgba(255, 0, 255, 0.7);
     top: 0;
     left: 20%;
-    margin-top: -470px;
+    /* margin-top: -470px; */
     transition: 0.3s;
     color: #fff;
 }
@@ -315,26 +315,27 @@ nav img {
 
 .box-body {
     width: 100%;
-    border: 1px solid black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.366);
 }
 
-.box-header{
+.box-header {
     height: 8%;
     display: flex;
     justify-content: center;
 }
 
-.box-body{
+.box-body {
     height: 67%;
 }
 
-.box-label{
+.box-label {
     height: 25%;
     position: absolute;
     bottom: 0;
     display: flex;
     justify-content: center;
 }
+
 .box-social {
     width: 50px;
     height: 50px;
@@ -375,10 +376,18 @@ nav img {
     left: 10px;
 }
 
+/* LOGO & IMAGE */
+
 .img-profile {
     position: absolute;
     bottom: 30px;
     width: 80px;
+    border-radius: 100%;
+}
+
+.logo-box{
+    width: 50px;
+    border: 1px solid #fff;
     border-radius: 100%;
 }
 
@@ -388,38 +397,8 @@ nav img {
     bottom: 0;
 }
 
-/* MEDIA QUERY */
 
-/* BOX */
-@media screen and (max-width:480px) {
-
-    body {
-        background: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    main,
-    nav {
-        display: none;
-    }
-
-    .message-for-mobile {
-        display: block;
-        color: white;
-        text-align: center;
-        margin: 0 60px;
-    }
-
-    .img-not-visible {
-        width: 70px;
-        margin-bottom: 30px;
-        border-top-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-
-}
+/* ANIMAZIONE */
 
 @keyframes animazione {
 
@@ -464,4 +443,35 @@ nav img {
 }
 
 
+/* MEDIA QUERY */
 
+/* BOX */
+@media screen and (max-width:768px) {
+
+    body {
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main,
+    nav {
+        display: none;
+    }
+
+    .message-for-mobile {
+        display: block;
+        color: white;
+        text-align: center;
+        margin: 0 60px;
+    }
+
+    .img-not-visible {
+        width: 70px;
+        margin-bottom: 30px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+}
